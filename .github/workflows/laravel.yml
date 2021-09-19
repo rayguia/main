@@ -39,3 +39,10 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: testmain
+        registry: 922860393995.dkr.ecr.us-east-1.amazonaws.com/testmain
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.DOCKER_KEY_AWS }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
